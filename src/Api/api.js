@@ -8,11 +8,22 @@ export const leoLabVideos = (searchQuery) => {
         let videos = [];
         json.map( x => {
           if(searchQuery !== ""){
-            if(x.title.toLowerCase().includes(searchQuery.toLowerCase())){ // || x.description.toLowerCase().includes(searchQuery.toLowerCase()) || x.tags.toLowerCase().includes(searchQuery.toLowerCase())){
+            // videos.filter(v => v.title.toLowerCase().includes(searchQuery.toLowerCase()));
+            // videos.filter(y => y.description.toLowerCase().includes(searchQuery.toLowerCase()));
+            // videos.filter(z => z.tags.toLowerCase().includes(searchQuery.toLowerCase()));
+            if(x.title.toLowerCase().includes(searchQuery.toLowerCase()) || x.description.toLowerCase().includes(searchQuery.toLowerCase())){ // || x.tags.toLowerCase().includes(searchQuery.toLowerCase())){
               console.log("x.title", x.title);
               console.log("x.description", x.description);
-              console.log("x.baseTags", x.tags);
+              console.log("x.tags", x.tags);
               videos.push(x);
+              
+            }else{
+              x.tags.map( y => {
+                if(y.toLowerCase() === searchQuery.toLowerCase()){
+                  videos.push(x);
+                }
+                return videos;
+              })
             }
             return videos;
           }

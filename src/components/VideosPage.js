@@ -3,19 +3,19 @@ import PropTypes from 'prop-types';
 import ReactPlayer from 'react-player';
 
 const VideosPage = ({ videos, onHandleSelectVideo, selectedVideo }) => {
-
     const introduction = ( 
       videos.filter(v => v.category === 'Introduction')
     );
-
-    // {console.log("introduction", introduction)}
     const tips = ( 
       videos.filter(v => v.category === 'Tips')
     );
-
     const skinReactions = ( 
       videos.filter(v => v.category === 'Common skin reactions')
     );
+    {console.log("videos", videos)}
+    {console.log("introduction", introduction.length)};
+    {console.log("introduction", tips.length)};
+    {console.log("introduction", skinReactions.length)};
       
     return(
     <div className="col-md-12">
@@ -31,41 +31,47 @@ const VideosPage = ({ videos, onHandleSelectVideo, selectedVideo }) => {
     <div className="div-col" >
       <div className="video-thumbnail" className="col-md-4">
       <h3>Introduction</h3>
-      {introduction.length !== 0 ? introduction.map(video => ( //console.log("tips", tips.length)
-          <div key={video.id + 'introduction'} onClick={onHandleSelectVideo.bind(this, video)} className="image-thumbnail">
-            <div className="wrapper_thumbnail">
-              <img src={video.thumbUrl} alt={video.title} />
-              <h5>{video.title}</h5>
-              <h6>Running time: {video.runningTime}</h6>
+        { introduction.length !== 0 ? 
+          introduction.map(video => ( //console.log("tips", tips.length)
+            <div key={video.id + 'introduction'} onClick={onHandleSelectVideo.bind(this, video)} className="image-thumbnail">
+              <div className="wrapper_thumbnail">
+                <img src={video.thumbUrl} alt={video.title} />
+                <h5>{video.title}</h5>
+                <h6>Running time: {video.runningTime}</h6>
+              </div>
             </div>
-          </div>
-        )): "There are no items in this category matching your requirements."}
+          )): "There are no items in this category matching your requirements."
+        }
       </div>
 
       <div className="video-thumbnail" className="col-md-4">
       <h3>Tips</h3>
-        {tips.length !== 0 ? tips.map(video => ( //console.log("tips", tips.length)
-          <div key={video.id + 'tips'} onClick={onHandleSelectVideo.bind(this, video)} className="image-thumbnail">
-            <div className="wrapper_thumbnail">
-              <img src={video.thumbUrl} alt={video.title} />
-              <h5>{video.title}</h5>
-              <h6>Running time: {video.runningTime}</h6>
+        { tips.length !== 0 ? 
+          tips.map(video => ( 
+            <div key={video.id + 'tips'} onClick={onHandleSelectVideo.bind(this, video)} className="image-thumbnail">
+              <div className="wrapper_thumbnail">
+                <img src={video.thumbUrl} alt={video.title} />
+                <h5>{video.title}</h5>
+                <h6>Running time: {video.runningTime}</h6>
+              </div>
             </div>
-          </div>
-        )): "There are no items in this category matching your requirements."}
+          )) : "There are no items in this category matching your requirements."
+        }
       </div>
 
       <div className="video-thumbnail" className="col-md-4">
       <h3>Common skin reactions</h3>
-        {skinReactions.length !== 0 ? skinReactions.map(video => ( //console.log("skin_conditions", video)
-          <div key={video.id + 'skin'} onClick={onHandleSelectVideo.bind(this, video)} className="image-thumbnail">
-            <div className="wrapper_thumbnail">
-              <img src={video.thumbUrl} alt={video.title} />
-              <h5>{video.title}</h5>
-              <h6>Running time: {video.runningTime}</h6>
+        { skinReactions.length !== 0 ? 
+          skinReactions.map(video => ( //console.log("skin_conditions", video)
+            <div key={video.id + 'skin'} onClick={onHandleSelectVideo.bind(this, video)} className="image-thumbnail">
+              <div className="wrapper_thumbnail">
+                <img src={video.thumbUrl} alt={video.title} />
+                <h5>{video.title}</h5>
+                <h6>Running time: {video.runningTime}</h6>
+              </div>
             </div>
-          </div>
-        )): "There are no items in this category matching your requirements."}
+          )) : "There are no items in this category matching your requirements."
+        }
       </div>
     </div>
     <br /><br />
