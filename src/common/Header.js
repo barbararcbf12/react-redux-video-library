@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, IndexLink } from 'react-router';
+// import { Link, IndexLink } from 'react-router';
 
 const Header = () => (
   <div className="text-center">

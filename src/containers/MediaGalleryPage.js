@@ -1,4 +1,5 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { searchMediaAction, selectVideoAction } from '../actions/mediaActions';
 import VideosPage from '../components/VideosPage';
@@ -13,25 +14,6 @@ export class MediaGalleryPage extends Component {
 
   componentDidMount() {
     this.props.dispatch(searchMediaAction(''));
-
-    // let introduction = [];
-    // let tips = [];
-    // let skinReactions =[];
-    // {this.props.videos.map(video => {
-    //   if(video.active !== "false"){
-    //     if(video.category === 'Introduction'){
-    //       introduction.push(video);
-    //       console.log(introduction.length);
-    //     }
-    //     if(video.category === 'Tips'){
-    //       tips.push(video);
-    //     }
-    //     if(video.category === 'Common skin reactions'){
-    //       skinReactions.push(video);
-    //     }
-    //   }
-    //   })
-    // }
   }
 
   handleSelectVideo(selectedVideo) {
@@ -42,7 +24,7 @@ export class MediaGalleryPage extends Component {
     event.preventDefault();
     if (this.query !== null) {
       this.props.dispatch(searchMediaAction(this.query.value));
-      this.query.value = '';
+      // this.query.value = '';
     }
   }
 
@@ -67,9 +49,6 @@ export class MediaGalleryPage extends Component {
           <div className="row">
             <VideosPage
               videos={videos}
-              // introduction={introduction}
-              // tips={tips}
-              // skinReactions={skinReactions}
               selectedVideo={selectedVideo}
               onHandleSelectVideo={this.handleSelectVideo}
             />
@@ -81,9 +60,6 @@ export class MediaGalleryPage extends Component {
 }
 
 MediaGalleryPage.propTypes = {
-  // introduction: PropTypes.array,
-  // tips: PropTypes.array,
-  // skinReactions: PropTypes.array,
   videos: PropTypes.array,
   selectedVideo: PropTypes.object,
   dispatch: PropTypes.func.isRequired
