@@ -1,6 +1,5 @@
 export const leoLabVideos = (searchQuery) => {
   var SKINCOACHAPP_API_ENDPOINT = `http://video.skincoachapp.com/v1/_debug/`;
-  // console.log("searchQuery", searchQuery);
 
   return fetch(SKINCOACHAPP_API_ENDPOINT)
   .then(response => {
@@ -18,7 +17,7 @@ export const leoLabVideos = (searchQuery) => {
             videos = json;
           }
         });
-              
+               
         return videos.map(({ id, active, title, runningTime, thumbUrl, videoUrl, description, browseable, category, baseTags }) =>
           ({
             id,
