@@ -10,10 +10,7 @@ export const leoLabVideos = (searchQuery) => {
         let videos = [];
         json.map( x => {
           if(searchQuery !== ""){
-            if(x.title.toLowerCase().includes(searchQuery.toLowerCase()) || x.description.toLowerCase().includes(searchQuery.toLowerCase())){ // || x.tags.toLowerCase().includes(searchQuery.toLowerCase())){
-              console.log("x.title", x.title);
-              console.log("x.description", x.description);
-              console.log("x.tags", x.tags);
+            if(x.title.toLowerCase().includes(searchQuery.toLowerCase()) || x.description.toLowerCase().includes(searchQuery.toLowerCase())){ 
               videos.push(x);
               
             }else{

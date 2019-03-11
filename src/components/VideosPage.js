@@ -13,17 +13,20 @@ const VideosPage = ({ videos, onHandleSelectVideo, selectedVideo }) => {
     const skinReactions = ( 
       videos.filter(v => v.category === 'Common skin reactions')
     );
+    const styleSelectedVideo = (
+      videos.length !== 0 ? 'block' : 'none'
+    )
 
     return(
       <div className="col-md-12">
 
-        <div className="select-video"> 
+        <div className="select-video" style={{display: styleSelectedVideo}}> 
           {selectedVideo && (<div id={selectedVideo.id}>
-            <h4 className="title">{selectedVideo.title}</h4>
-            <h6 className="title">{selectedVideo.description}</h6>
+            <div className="title">{selectedVideo.title}</div>
             <div className='react-player'>
-              <ReactPlayer url={selectedVideo.mediaUrl} playing controls light={selectedVideo.thumbUrl} width='100%' height='450px' /> 
+              <ReactPlayer url={selectedVideo.mediaUrl} playing controls light={selectedVideo.thumbUrl} width='100%' height='400px' /> 
             </div>
+            <div className="label">{selectedVideo.description}</div>
           </div>)}
         </div>
         
@@ -35,7 +38,7 @@ const VideosPage = ({ videos, onHandleSelectVideo, selectedVideo }) => {
               <div key={video.id + 'introduction'} onClick={onHandleSelectVideo.bind(this, video)} className="image-thumbnail">
                 <div className="wrapper_thumbnail">
                   <img src={video.thumbUrl} alt={video.title} />
-                  <h5>{video.title}</h5>
+                  <h4>{video.title}</h4>
                   <h6>Running time: {video.runningTime}</h6>
                 </div>
               </div>
@@ -50,7 +53,7 @@ const VideosPage = ({ videos, onHandleSelectVideo, selectedVideo }) => {
               <div key={video.id + 'tips'} onClick={onHandleSelectVideo.bind(this, video)} className="image-thumbnail">
                 <div className="wrapper_thumbnail">
                   <img src={video.thumbUrl} alt={video.title} />
-                  <h5>{video.title}</h5>
+                  <h4>{video.title}</h4>
                   <h6>Running time: {video.runningTime}</h6>
                 </div>
               </div>
@@ -65,7 +68,7 @@ const VideosPage = ({ videos, onHandleSelectVideo, selectedVideo }) => {
               <div key={video.id + 'skin'} onClick={onHandleSelectVideo.bind(this, video)} className="image-thumbnail">
                 <div className="wrapper_thumbnail">
                   <img src={video.thumbUrl} alt={video.title} />
-                  <h5>{video.title}</h5>
+                  <h4>{video.title}</h4>
                   <h6>Running time: {video.runningTime}</h6>
                 </div>
               </div>

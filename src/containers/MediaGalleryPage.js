@@ -21,7 +21,6 @@ export class MediaGalleryPage extends Component {
 
   componentDidMount() {
     this.props.dispatch(searchMediaAction(''));
-    console.log("this.props.defaultVideo", this.props.defaultVideo);
   }
 
   handleSelectVideo(selectedVideo) {
@@ -95,12 +94,13 @@ export class MediaGalleryPage extends Component {
 
           <div>
             <h4>{ "Total of results: " + videos.length }</h4>
-            <input
-              type="submit"
-              className="btn btn-primary"
-              value="Clear Search"
-              onClick={this.handleClearSearch}
-            />
+              <input
+                  type="submit"
+                  className="btn btn-primary"
+                  style={{display: videos.length !== 16 ? 'inline-block' : 'none' }}
+                  value="Clear Search"
+                  onClick={this.handleClearSearch}
+              />
           </div>
 
           <div className="row">
