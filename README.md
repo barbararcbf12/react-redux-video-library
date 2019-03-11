@@ -19,6 +19,9 @@ Clone this repository, navigate to its folder and run:
 * 'npm install' to install the dependences
 * 'npm start' to run the application at development server
 
+## Observation
+You may encounter issues with CORS. Feel free to disable cross-origin protection in the browser if this gives you any problem.
+
 ## Credit
 Special credit goes to Rowland Ekemezie, whose tutorial based the development of this video gallery and the improvement of my professional skills. [Tutorial](https://scotch.io/tutorials/build-a-media-library-with-react-redux-and-redux-saga-part-1)
 
