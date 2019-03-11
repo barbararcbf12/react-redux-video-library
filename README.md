@@ -15,7 +15,9 @@ Coding assessment task.
 * [Redux-saga](https://github.com/yelouafi/redux-saga) for handling async tasks with agility.
 
 # Running the application
-Clone this repository, navigate to its folder and run 'npm install'.
+Clone this repository, navigate to its folder and run:
+* 'npm install' to install the dependences
+* 'npm start' to run the application at development server
 
 ## Credit
 Special credit goes to Rowland Ekemezie, whose tutorial based the development of this video gallery and the improvement of my professional skills. [Tutorial](https://scotch.io/tutorials/build-a-media-library-with-react-redux-and-redux-saga-part-1)
