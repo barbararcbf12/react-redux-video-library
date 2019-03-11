@@ -1,4 +1,4 @@
-![Application UI](https://github.com/barbararcbf12/react-redux-video-library/tree/master/assets/Application-UI.png) 
+![Application UI](https://github.com/barbararcbf12/react-redux-video-library/blob/master/assets/Application-UI.png) 
 
 # What is it?
 Small video library where:
