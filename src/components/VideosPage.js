@@ -32,7 +32,7 @@ const VideosPage = ({ videos, onHandleSelectVideo, selectedVideo }) => {
         
       <div className="div-col" >
         <div className="col-md-4">
-        <h3>Introduction</h3>
+        <h3>Introduction ({introduction.length})</h3>
           { introduction.length !== 0 ? 
             introduction.map(video => ( 
               <div key={video.id + 'introduction'} onClick={onHandleSelectVideo.bind(this, video)} className="image-thumbnail">
@@ -47,7 +47,7 @@ const VideosPage = ({ videos, onHandleSelectVideo, selectedVideo }) => {
         </div>
 
         <div className="col-md-4">
-        <h3>Tips</h3>
+        <h3>Tips ({tips.length})</h3>
           { tips.length !== 0 ? 
             tips.map(video => ( 
               <div key={video.id + 'tips'} onClick={onHandleSelectVideo.bind(this, video)} className="image-thumbnail">
@@ -62,7 +62,7 @@ const VideosPage = ({ videos, onHandleSelectVideo, selectedVideo }) => {
         </div>
 
         <div className="col-md-4">
-        <h3>Common skin reactions</h3>
+        <h3>Common skin reactions ({skinReactions.length})</h3>
           { skinReactions.length !== 0 ? 
             skinReactions.map(video => ( 
               <div key={video.id + 'skin'} onClick={onHandleSelectVideo.bind(this, video)} className="image-thumbnail">

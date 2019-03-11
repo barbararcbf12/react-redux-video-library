@@ -1,23 +1,21 @@
-<!-- [![Build Status](https://travis-ci.org/andela-rekemezie/media-library.svg?branch=master)](https://travis-ci.org/andela-rekemezie/media-library)
-[![Coverage Status](https://coveralls.io/repos/github/andela-rekemezie/media-library/badge.svg?branch=master)](https://coveralls.io/github/andela-rekemezie/media-library?branch=master)
-
-![Application UI](https://cloud.githubusercontent.com/assets/15085641/17646353/587e60d0-61bd-11e6-9403-82437ee3a6e6.png) -->
-
-
-<!-- - Click here for see the [Live demo](http://media-gallery.herokuapp.com).
-- Click here for the tutorial post. -->
+![Application UI](https://github.com/barbararcbf12/react-redux-video-library/tree/master/assets/Application-UI.png) 
 
 # What is it?
-Small video library 
+Small video library where:
+* Data is fetched from given API and load only the items with active key not false, bringing their thumbnail, title and description, and segmenting them by their category key.
+* onClick at an item, it's title, description and video are loaded.
+* The library can be searchable (or filtered in-place) by simple plain text entry and matching 'title', 'description' and 'tag'.
 
 # Motivation
-Leo Innovation Lab coding assessment task.
-<!-- media-gallery is a tutorial app to get all levels of React developers up to speed with how to architect a scalable, maintainable and testable react/redux application. -->
+Coding assessment task.
 
 # Technology used
 * [React](https://facebook.github.io/react/) as the core infrastructure.
 * [Redux](https://github.com/reactjs/redux) for state management.
 * [Redux-saga](https://github.com/yelouafi/redux-saga) for handling async tasks with agility.
+
+# Running the application
+Clone this repository, navigate to its folder and run 'npm install'.
 
 ## Credit
 Special credit goes to Rowland Ekemezie, whose tutorial based the development of this video gallery and the improvement of my professional skills. [Tutorial](https://scotch.io/tutorials/build-a-media-library-with-react-redux-and-redux-saga-part-1)
