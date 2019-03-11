@@ -11,25 +11,45 @@ export class MediaGalleryPage extends Component {
     this.handleSearch = this.handleSearch.bind(this);
     this.handleClearSearch = this.handleClearSearch.bind(this);
     this.handleSelectVideo = this.handleSelectVideo.bind(this);
+    this.handleTextChange = this.handleTextChange.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.state = { 
+      textSubmittd: '',
+      textNew: 'start'
+    };
   }
 
   componentDidMount() {
     this.props.dispatch(searchMediaAction(''));
+    console.log("this.props.defaultVideo", this.props.defaultVideo);
   }
 
   handleSelectVideo(selectedVideo) {
-    // if(this.props.videos !== null){
+    if(this.props.videos !== 0){
       this.props.dispatch(selectVideoAction(selectedVideo));
-    // }else{
-    //   this.props.dispatch(selectVideoAction(''));
-    // }
+    }
+  }
+
+  handleTextChange(event){
+    event.preventDefault();
+    this.setState({ textNew: this.query.value });
   }
 
   handleSearch(event) {
     event.preventDefault();
+    this.setState({ textSubmitted: this.state.textNew });
     if (this.query !== null) {
       this.props.dispatch(searchMediaAction(this.query.value));
     }
+  }
+
+  handleKeyPress(target) {
+    if(target.charCode===13){
+      this.setState({ textSubmitted: this.state.textNew });
+      if (this.query !== null) {
+        this.props.dispatch(searchMediaAction(this.query.value));
+      }    
+    } 
   }
 
   handleClearSearch(event) {
@@ -41,32 +61,48 @@ export class MediaGalleryPage extends Component {
   }
 
   render() {
-    // console.log(this.props.videos, 'Videos new');
-    // console.log(this.props.selectedVideo, 'SelectedVideo new');
+
     const { videos, selectedVideo } = this.props;
 
-    // const resultsNumber = ( videos.length );
+    const disabledButton = (
+      <input
+        type="submit"
+        className="btn btn-sec"
+        value="Search Library"
+      />
+    );
 
     return (
       <div className="container-fluid">
         { videos ? <div>
           <input
             type="text"
+            className="search-field"
             ref={ref => (this.query = ref)}
+            onChange={this.handleTextChange}
+            onKeyPress={this.handleKeyPress}
           />
-          <input
-            type="submit"
-            className="btn btn-primary"
-            value="Search Library"
-            onClick={this.handleSearch}
-          />
-          <input
-            type="submit"
-            className="btn btn-primary"
-            value="Clear Search"
-            onClick={this.handleClearSearch}
-          />
-          <div>{ "Total of results: " + videos.length }</div>
+          { this.state.textNew === this.state.textSubmitted ?
+            disabledButton
+            : 
+            <input
+              type="submit"
+              className="btn btn-primary"
+              value="Search Library"
+              onClick={this.handleSearch}
+            />
+          }
+
+          <div>
+            <h4>{ "Total of results: " + videos.length }</h4>
+            <input
+              type="submit"
+              className="btn btn-primary"
+              value="Clear Search"
+              onClick={this.handleClearSearch}
+            />
+          </div>
+
           <div className="row">
             <VideosPage
               videos={videos}

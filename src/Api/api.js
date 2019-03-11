@@ -1,3 +1,5 @@
+//Fetching data from laoLab's API and checking if resultant JSON's 
+//keys 'title', 'description' and ' tags' contain a string typed by the user
 export const leoLabVideos = (searchQuery) => {
   var SKINCOACHAPP_API_ENDPOINT = `http://video.skincoachapp.com/v1/_debug/`;
 
@@ -8,9 +10,6 @@ export const leoLabVideos = (searchQuery) => {
         let videos = [];
         json.map( x => {
           if(searchQuery !== ""){
-            // videos.filter(v => v.title.toLowerCase().includes(searchQuery.toLowerCase()));
-            // videos.filter(y => y.description.toLowerCase().includes(searchQuery.toLowerCase()));
-            // videos.filter(z => z.tags.toLowerCase().includes(searchQuery.toLowerCase()));
             if(x.title.toLowerCase().includes(searchQuery.toLowerCase()) || x.description.toLowerCase().includes(searchQuery.toLowerCase())){ // || x.tags.toLowerCase().includes(searchQuery.toLowerCase())){
               console.log("x.title", x.title);
               console.log("x.description", x.description);

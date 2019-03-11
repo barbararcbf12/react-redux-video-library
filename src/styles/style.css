@@ -69,3 +69,22 @@ h3::after {
 .div-col {
   margin-top: 10px;
 }
+
+.btn-sec {
+  color: #aaa;
+  background-color: #ccc;
+  border-color: #999;
+}
+
+.btn {
+  margin: 0 5px;
+  height: 45px;
+}
+
+.search-field {
+  width: 80%;    
+  height: 45px;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
