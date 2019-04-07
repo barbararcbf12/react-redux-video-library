@@ -15,9 +15,9 @@ describe('Test store', () => {
     const store = mockStore({});
     const expectedValue = {
       type: 'SEARCH_MEDIA_REQUEST',
-      payload: 'skin'
+      payload: 'rain'
     };
-    store.dispatch(searchMediaAction('skin'));
+    store.dispatch(searchMediaAction('rain'));
     expect(store.getActions()).toEqual([expectedValue]);
   });
 });

@@ -14,7 +14,7 @@ describe('Test for searchMediaSaga', () => {
 
   it('should yield array of objects', () => {
     const videos = [];
-    expect(gen.next(videos).value.length).toEqual(16);
+    expect(gen.next(videos).value.length).toEqual(4);
   });
 
   it('should dispatch failure effect', () => {

@@ -28,8 +28,9 @@ describe('Test for Video Page component', () => {
   });
 
   it('should render self', () => {
-    expect(Wrapper.find('h3').text()).toEqual('Introduction');
-    expect(Wrapper.find('ReactPlayer').length).toEqual(1);
-    expect(Wrapper.find('div').hasClass('wrapper_thumbnail')).toBe(true);
+    expect(Wrapper.find('h2').text()).toEqual('Videos');
+    expect(Wrapper.find('h6').hasClass('title')).toBe(true);
+    expect(Wrapper.find('video').length).toEqual(2);
+    expect(Wrapper.find('div').length).toEqual(5);
   });
 });
