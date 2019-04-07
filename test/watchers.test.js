@@ -3,7 +3,7 @@ import { fork, take } from 'redux-saga/effects';
 import searchMediaSaga from '../src/sagas/mediaSagas';
 import watchSearchMedia from '../src/sagas/watchers';
 
-describe('Test for watchLoadfetchChildrenGroup', () => {
+describe('Test for watchLoadLeoLabVideos', () => {
 
   describe('Test for watchSearchMedia', () => {
     it('should call searchMediaSaga', () => {

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
-import HomePage from './containers/HomePage';
+import MediaGalleryPage from './containers/MediaGalleryPage';
 import App from './containers/App';
 
 export default (
   <Route path="/" component={App}>
-    <IndexRoute component={HomePage} />
+    <IndexRoute component={MediaGalleryPage} />
   </Route>
 );
 

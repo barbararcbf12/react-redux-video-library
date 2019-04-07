@@ -1,15 +1,15 @@
 import expect from 'expect';
 import { put, call } from 'redux-saga/effects';
 import searchMediaSaga from '../src/sagas/mediaSagas';
-import { fetchChildrenGroup } from '../src/Api/api';
+import { leoLabVideos } from '../src/Api/api';
 
 
 describe('Test for searchMediaSaga', () => {
   const payload = 'test';
   const gen = searchMediaSaga({ payload });
 
-  it('should call fetchChildrenGroup API', () => {
-    expect(gen.next(payload).value).toEqual(call(fetchChildrenGroup, payload));
+  it('should call leoLabVideos API', () => {
+    expect(gen.next(payload).value).toEqual(call(leoLabVideos, payload));
   });
 
   it('should yield array of objects', () => {
